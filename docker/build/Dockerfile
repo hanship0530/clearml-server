@@ -1,6 +1,10 @@
-FROM centos/nodejs-12-centos7 AS webapp
+FROM centos:7 AS webapp
 
 ARG CLEARML_WEB_GIT_URL=https://github.com/allegroai/clearml-web.git
+
+RUN yum install curl
+RUN curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
+RUN yum install -y nodejs
 
 USER root
 WORKDIR /opt
