@@ -3,4 +3,3 @@ Flask
 Flask-Cors>=3.0.5
 Flask-Compress>=1.4.0
 pyhocon>=0.3.35
-setuptools-rust==1.5.2
