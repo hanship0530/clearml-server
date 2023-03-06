@@ -36,4 +36,3 @@ semantic_version>=2.8.3,<3
 six
 tqdm
 validators>=0.12.4
-setuptools-rust==1.5.2
