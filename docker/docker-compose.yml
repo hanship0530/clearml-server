@@ -135,7 +135,7 @@ services:
       - redis
       - mongo
       - elasticsearch
-      - fileserver
+#      - fileserver
     container_name: async_delete
     image: allegroai/clearml:latest
     networks:
