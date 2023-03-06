@@ -10,12 +10,12 @@ services:
     volumes:
     - /opt/clearml/logs:/var/log/clearml
     - /opt/clearml/config:/opt/clearml/config
-    - /opt/clearml/data/fileserver:/mnt/fileserver
+#    - /opt/clearml/data/fileserver:/mnt/fileserver
     depends_on:
       - redis
       - mongo
       - elasticsearch
-      - fileserver
+#      - fileserver
     environment:
       CLEARML_ELASTIC_SERVICE_HOST: elasticsearch
       CLEARML_ELASTIC_SERVICE_PORT: 9200
@@ -150,13 +150,13 @@ services:
       CLEARML_REDIS_SERVICE_HOST: redis
       CLEARML_REDIS_SERVICE_PORT: 6379
       PYTHONPATH: /opt/clearml/apiserver
-      CLEARML__services__async_urls_delete__fileserver__url_prefixes: "[${CLEARML_FILES_HOST:-}]"
+#      CLEARML__services__async_urls_delete__fileserver__url_prefixes: "[${CLEARML_FILES_HOST:-}]"
     entrypoint:
       - python3
       - -m
       - jobs.async_urls_delete
-      - --fileserver-host
-      - http://fileserver:8081
+#      - --fileserver-host
+#      - http://fileserver:8081
     volumes:
       - /opt/clearml/logs:/var/log/clearml
 
